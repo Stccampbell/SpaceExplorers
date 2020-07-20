@@ -1,0 +1,78 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background: blue;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    height: 75vh;
+    width: 75vw;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.interactiveBox{
+    background-color: white;
+    height: 20vh;
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.lane{
+    background-color: blueviolet;
+    width: 100%;
+    height: 20%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.space{
+    position: relative;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.randomEncounterMain{
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    background-color: orange;
+    justify-self: start;
+}
+
+.fleet{
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100px solid gold;
+    border-bottom: 50px solid transparent;
+
+    position: relative;
+    animation: shipMove1 5s forwards;
+}
+
+.fleet :active{
+    animation: shipMove2 5s forwards;
+}
+
+@keyframes shipMove1 {
+    from {left: 0%}
+    to{left: 40%}
+}
+
+@keyframes shipMove2 {
+    from {left: 40%}
+    to{left: 120%}
+}
