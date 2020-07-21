@@ -25,6 +25,14 @@ main{
     align-self: center;
 }
 
+.option:hover{
+    color: blue;
+}
+
+h2{
+    text-align: center;
+}
+
 .lane{
     background-color: blueviolet;
     width: 100%;
@@ -35,6 +43,11 @@ main{
     overflow: hidden;
 }
 
+.space.two{
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
 .space{
     position: relative;
     height: 40%;
@@ -42,6 +55,14 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.resources{
+    color: white;
+}
+
+ul{
+    list-style-type: none;
 }
 
 .randomEncounterMain{
@@ -55,9 +76,9 @@ main{
 .fleet{
     width: 0;
     height: 0;
-    border-top: 50px solid transparent;
-    border-left: 100px solid gold;
-    border-bottom: 50px solid transparent;
+    border-top: 5vh solid transparent;
+    border-left: 10vh solid gold;
+    border-bottom: 5vh solid transparent;
 
     position: relative;
     animation: shipMove1 5s forwards;
