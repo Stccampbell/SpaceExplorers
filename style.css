@@ -29,6 +29,10 @@ main{
     color: blue;
 }
 
+.option.hidden{
+    display: none;
+}
+
 h2{
     text-align: center;
 }
