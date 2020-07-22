@@ -1,5 +1,7 @@
 // window.alert("js works")
 
+//phase
+let phase = 'homePage'
 
 //global variables
 //resources
@@ -13,45 +15,48 @@ const resources = {
 }
 
 
-//resource function
-const resourceAssignmentObject = {
-    food: document.querySelector("#food"),
-    colonists: document.querySelector("#colonists"),
-    water: document.querySelector("#water"),
-    shipIntegrety: document.querySelector("#shipIntegrety"),
-    years: document.querySelector('#year'),
-}
+//resource variables
+    // const food = document.querySelector("#food")
+    // const colonists = document.querySelector("#colonists")
+    // const water = document.querySelector("#water")
+    // const shipIntegrety = document.querySelector("#shipIntegrety")
+    // const years = document.querySelector('#year')
+    function resourceAssignment(){
+        const food = document.querySelector("#food")
+        const colonists = document.querySelector("#colonists")
+        const water = document.querySelector("#water")
+        const shipIntegrety = document.querySelector("#shipIntegrety")
+        const years = document.querySelector('#year')
+    }
+
 
 //should be placed at the begining of each page
 function resourceUpdate(){
-    resourceAssignmentObject.food.innerText = `Food: ${resources.food}`;
-    resourceAssignmentObject.colonists.innerText = `Colonists: ${resources.colonists}`;
-    resourceAssignmentObject.water.innerText = `Water: ${resources.water}`;
-    resourceAssignmentObject.shipIntegrety.innerText = `Ship Integrety: ${resources.shipIntegrety}%`;
-    resourceAssignmentObject.years.innerText = `Captins Log: Star Date ${resources.year}`;
+    food.innerText = `Food: ${resources.food}`;
+    colonists.innerText = `Colonists: ${resources.colonists}`;
+    water.innerText = `Water: ${resources.water}`;
+    shipIntegrety.innerText = `Ship Integrety: ${resources.shipIntegrety}%`;
+    years.innerText = `Captins Log: Star Date ${resources.year}`;
 }
 
-function mainPageDom(){
-    const spaceOne = document.getElementById('.one');
-    const lane = document.getElementById(".lane");
-    const resourcesBar = document.getElementById('.resources');
-    const interactiveBox = document.getElementById('#interactiveBox');
-    const textBox = document.getElementById('.textContainer')
-}
+
+//MainDomSelectors
+    const spaceOne = document.querySelector('.one')
+    const lane = document.querySelector(".lane")
+    const resourcesBar = document.querySelector('.resources')
+    const interactiveBox = document.querySelector('#interactiveBox')
+    const textBox = document.querySelector('.textContainer')
+
 
 function createPage(){
-    //random encounter and fleet
+    //fleet
     const fleet = document.createElement('div')
     fleet.setAttribute("class", "fleet")
-    mainPageDom.lane.appendChild(fleet)
-
-    const randomMain = document.createElement('div')
-    randomMain.setAttribute("class", "randomEncounterMain")
-    mainPageDom.spaceOne.appendChild(randomMain)
+    lane.appendChild(fleet)
 
     //resource tab
     const resourceList = document.createElement('ul')
-    mainPageDom.resourcesBar.appendChild(resourceList)
+    resourcesBar.appendChild(resourceList)
     for(let i = 0; i<4; i++){
         const item = document.createElement('li')
         const resourcesKeys = Object.keys(resources)
@@ -61,12 +66,18 @@ function createPage(){
 
     //year
     const captainsLog = document.createElement('h2')
-    captainsLog.setAttribute('id', 'year')
-    mainPageDom.textBox.appendChild(captainsLog)
+    captainsLog.setAttribute('id', 'years')
+    textBox.prepend(captainsLog)
 
-    mainPageDom()
+    if(phase === 'homePage' || phase === 'mainPhase'){
+        const randomMain = document.createElement('div')
+        randomMain.setAttribute("class", "randomEncounterMain")
+        spaceOne.appendChild(randomMain)
+
+        phase = 'mainPhase'
+    }
+    resourceAssignment()
     resourceUpdate()
 }
 
 
-createPage()
