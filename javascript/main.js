@@ -1,36 +1,3 @@
-// window.alert("js works")
-
-
-//global variables
-//resources
-const resources = {
-    colonists: 50,
-    shipIntegrety: 50,
-    food: 50,
-    water: 50,
-    year: 2237,
-    endgamecounter: 0
-}
-
-
-//resource function
-let food = document.querySelector("#food")
-let colonists = document.querySelector("#colonists")
-let water = document.querySelector("#water")
-let shipIntegrety = document.querySelector("#shipIntegrety")
-let years = document.querySelector('#year')
-
-//should be placed at the begining of each page
-function resourceUpdate(){
-    food.innerText = `Food: ${resources.food}`;
-    colonists.innerText = `Colonists: ${resources.colonists}`;
-    water.innerText = `Water: ${resources.water}`;
-    shipIntegrety.innerText = `Ship Integrety: ${resources.shipIntegrety}%`;
-    years.innerText = `Captins Log: Star Date ${resources.year}`;
-}
-
-window.resourceUpdate()
-
 //button click event
 const option = document.querySelectorAll(".option")
 
@@ -98,6 +65,5 @@ function travelPhase(){
     else{
         resources.year += (Math.floor(Math.random() * 99) + 100)
         resourceUpdate()
-        location.href = 'travelPhase.html'
     }
 }

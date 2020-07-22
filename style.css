@@ -6,6 +6,17 @@ body{
     align-items: center;
 }
 
+.gameContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameContainer.travelphase{
+    display: none;
+}
+
 main{
     height: 75vh;
     width: 75vw;
