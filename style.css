@@ -10,10 +10,6 @@ body{
     align-items: center;
 }
 
-.storage{
-    display: none;
-}
-
 .gameContainer.travelphase{
     display: none;
 }
@@ -130,7 +126,7 @@ ul{
 
 @keyframes encounterMove2 {
     from {left: 0%}
-    to{left: -60%}
+    to{left: -150%}
 }
 
 @keyframes encounterDissolve {

@@ -39,10 +39,10 @@ function resourceUpdate(){
     const interactiveBox = document.querySelector('#interactiveBox');
     const textBox = document.querySelector('.textContainer');
     const main = document.querySelector('main');
-    const mainPhase = document.querySelector('.mainPhase')
+    // const mainPhase = document.querySelector('.mainPhase')
     // const travelPhase = document.querySelector('.travelPhase')
     const hiddenStorage = document.querySelector('#storage')
-    const start = document.querySelector('#start')
+    //const start = document.querySelector('#start')
     const options = document.querySelector('.options')
 
 
@@ -83,8 +83,8 @@ function createGamePage(){
         randomEncounter.setAttribute("class", "randomEncounter");
         spaceOne.appendChild(randomEncounter);
 
-        textBox.appendChild(mainPhase)
-        // createOptions();
+        // textBox.appendChild(mainPhase)
+        createOptions();
 
         phase = 'mainPhase';
     }
@@ -93,7 +93,8 @@ function createGamePage(){
         randomEncounter.setAttribute("class", "randomEncounter");
         lane.appendChild(randomEncounter);
 
-        textBox.appendChild(travelPhase)
+        //textBox.appendChild(travelPhase)
+        createOptions();
 
         phase = 'travelPhase'
     }
@@ -142,13 +143,7 @@ document.querySelector('#start').addEventListener('click',function(){
     createGamePage()
 })
 
-//The Challenge
-function challenge(){
-    const theChallenge = document.createElement('p');
-    theChallenge.setAttribute('class', 'theChallenge');
-    textBox.prepend(theChallenge);
-    theChallenge.innerText = `Hello Captain! We have been traveling for ${resources.year -2235} years. We seemed to have encountered BLANK.`
-}
+
 
 //clear page
 function clearPage(){
@@ -156,9 +151,8 @@ function clearPage(){
     spaceOne.innerHTML = '';
     const lane = document.querySelector(".lane");
     lane.remove();
-    // options.remove();
-    hiddenStorage.appendChild(mainPhase);
-    hiddenStorage.appendChild(travelPhase);
+    // hiddenStorage.appendChild(mainPhase);
+    // hiddenStorage.appendChild(travelPhase);
     textBox.innerHTML = '';
 }
 
@@ -206,48 +200,3 @@ function resourceChanges(){
     }
 }
 
-// create the options
-// function createOptions(){
-//     const ul = document.createElement('ul');
-//     ul.setAttribute('class', 'options');
-//     textBox.appendChild(ul);
-//     if(phase === 'travelPhase' || phase === 'homePage'){
-//         for(let i = 1;i <= 4;i++){
-//             const li = document.createElement('li');
-//             li.setAttribute('class', 'option');
-//             li.setAttribute('id', `option${i}`);
-//             ul.appendChild(li);
-//         }
-//         // const option1 = document.querySelector('#option1');
-//         // const option2 = document.querySelector('#option2');
-//         // const option3 = document.querySelector('#option3');
-//         // const option4 = document.querySelector('#option4');
-
-//         // option1.innerText('Would you like to explore the random encounter');
-//         // option2.innerText('Would you like to replinish supplies');
-//         // option3.innerText('Would you like to repair the ship');
-//         // option4.innerText('Would you like to increase your speed');
-//     }
-//     else if(phase === 'mainPhase'){
-//         alert('not ready yet')
-//     }
-//     mainPhaseOptions()
-// }
-
-// function mainPhaseOptions(){
-//     const option1 = document.querySelector('#option1');
-//     const option2 = document.querySelector('#option2');
-//     const option3 = document.querySelector('#option3');
-//     const option4 = document.querySelector('#option4');
-
-//     option1.innerHTML = '1. Would you like to explore the random encounter';
-//     option2.innerHTML = '2. Would you like to replinish supplies';
-//     option3.innerHTML = '3. Would you like to repair the ship';
-//     option4.innerHTML = '4. Would you like to increase your speed';
-
-
-//     // document.querySelector('#option1').innerHTML('Would you like to explore the random encounter');
-//     // document.querySelector('#option2').innerHTML('Would you like to replinish supplies');
-//     // document.querySelector('#option3').innerHTML('Would you like to repair the ship');
-//     // document.querySelector('#option4').innerHTML('Would you like to increase your speed');
-// }
