@@ -5,74 +5,66 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <div class="space">
-            <div class="randomEncounterMain"></div>
-        </div>
+    <div class="gameContainer">
+        <main>
+            <div class="space one">
+            </div>
 
-        <div class="lane">
-            <div class="fleet"></div>
-        </div>
+            <div class="homeScreen">
+                <h1>Space Explorers</h1>
+                <br>
+                <button id="start">Start</button>
+            </div>
 
-        <div class="space two">
-            <div class="resources">
-                <ul>
-                    <li id="food">Food: 100</li>
-                    <li id="colonists">Colonists: 100</li>
-                    <li id="water">water: 100</li>
-                    <li id="shipIntegrety">Ship Integrety: 100%</li>
-                </ul>
+            <div class="space two">
+                <div class="resources">
+                </div>
+            </div>
+
+        </main>
+
+
+
+
+        <div id="interactiveBox" class="interactiveBox">
+            <div class="textContainer">
             </div>
         </div>
 
-    </main>
+    <div>
 
+    <div id="storage" class="storage">
+            <ul class="mainPhase">
+                <li class="option" id="option1">1. Would you like to explore the random encounter</li>
+                <li class="option" id="option2">2. Would you like to replinish supplies</li>
+                <li class="option" id="option3">3. Would you like to repair the ship</li>
+                <li class="option" id="option4">4. Would you like to increase your speed</li>
+                
+                <li class="option hidden" id="option5">1. Would you like to divert resources and grow food</li>
+                <li class="option hidden" id="option6">2. Would you like to divert resources to purifying water</li>
 
+            </ul>
 
+            <ul class="travelPhase">
+                <li class="option" id="option1">1. Would you like to travel</li>
+                <li class="option" id="option2">2. Would you like to travel</li>
+                <li class="option" id="option3">3. Would you like to travel</li>
+                <li class="option" id="option4">4. Would you like to travel</li>
+                
+                <li class="option hidden" id="option5">1. Would you like to divert resources and grow food</li>
+                <li class="option hidden" id="option6">2. Would you like to divert resources to purifying water</li>
 
-    <div class="interactiveBox">
-        <div class="textContainer">
-            <h2>Captins Log: Year 1</h2>
-        <p class="theChallenge">The first year has gone pretty smoothly! What would you like to do?</p>
-        <ol>
-            <li class="option" id="option1">Would you like to explore the random encounter</li>
-            <li class="option" id="option2">Would you like to replinish supplies</li>
-            <li class="option" id="option3">Would you like to repair the ship</li>
-            <li class="option" id="option4">Would you like to increase your speed</li>
-        </ol>
-        </div>
+            </ul>
     </div>
 
+    
 
 
 
 
+
+    
     <script src="javascript/main.js"></script>
+    <script src="javascript/mainPhase.js"></script>
+    <script src="javascript/travelPhase.js"></script>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</html>
