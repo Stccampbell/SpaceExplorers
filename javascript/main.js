@@ -6,12 +6,18 @@ let phase = 'homePage';
 //global variables
 //resources
 const resources = {
+    //DO NOT CHANGE ORDER OF FIRST 4
     colonists: 1000,
     shipIntegrety: 50,
     food: 10000,
     water: 10000,
+    //DO NOT CHANGE ORDER OF FIRST 4
+    foodUpgrades: 1,
+    shipIntegretyUpgrade: 1,
+    waterUpgrade: 1,
     year: 2237,
     endgamecounter: 0,
+    currentRandomEncounter: false,
 }
 
     function resourceAssignment(){
@@ -69,7 +75,7 @@ function createGamePage(){
     }
 
     //challenge
-    challenge();
+    // challenge();
 
     //year
     const captainsLog = document.createElement('h2');
@@ -83,8 +89,14 @@ function createGamePage(){
         randomEncounter.setAttribute("class", "randomEncounter");
         spaceOne.appendChild(randomEncounter);
 
-        // textBox.appendChild(mainPhase)
-        createOptions();
+        //randomEncounterSelector
+        resources.currentRandomEncounter = encounterSorter(mainPhaseObject)
+
+        //challenge
+        challenge(resources.currentRandomEncounter);
+
+        
+        createOptions(resources.currentRandomEncounter);
 
         phase = 'mainPhase';
     }
@@ -93,8 +105,13 @@ function createGamePage(){
         randomEncounter.setAttribute("class", "randomEncounter");
         lane.appendChild(randomEncounter);
 
-        //textBox.appendChild(travelPhase)
-        createOptions();
+        //randomEncounterSelector
+        resources.currentRandomEncounter = encounterSorter(mainPhaseObject)
+
+        //challenge
+        challenge(resources.currentRandomEncounter);
+
+        createOptions(resources.currentRandomEncounter);
 
         phase = 'travelPhase'
     }
