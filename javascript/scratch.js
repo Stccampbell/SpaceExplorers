@@ -50,7 +50,6 @@ function resourceUpdate(){
     const hiddenStorage = document.querySelector('#storage')
     //const start = document.querySelector('#start')
     const options = document.querySelector('.options')
-    const starContainer = document.querySelector('.starContainer')
 
 
 function createGamePage(){
@@ -59,9 +58,7 @@ function createGamePage(){
     lane.setAttribute('class', 'lane');
     main.insertBefore(lane, spaceOne.nextSibling);
 
-    //create stars
-    createStars()
-
+    createStars();
     //fleet
     // const fleet = document.createElement('div');
     // fleet.setAttribute("class", "fleet");
@@ -189,7 +186,6 @@ function clearPage(){
     // hiddenStorage.appendChild(mainPhase);
     // hiddenStorage.appendChild(travelPhase);
     textBox.innerHTML = '';
-    starContainer.innerHTML = '';
 }
 
 //standard resource changes
@@ -250,27 +246,14 @@ function randomEncounterArt(destination){
 }
 
 function createStars(){
-    //const main = document.querySelector('main')
-    for (let i=0; i < 20000; i++){
-        const starOrNoStar = Math.floor(Math.random() * 100)
-        if(starOrNoStar < 90){
-            let spacer = document.createElement('div')
-            spacer.classList.add('spacer')
-            main.append(spacer)
-        }
-        else if(starOrNoStar >= 90){
-            let star = document.createElement('img')
-            star.classList.add('star')
-            star.setAttribute('src', 'assets/StarLight.png')
-            main.append(star)
-        }
-    }
-}
-
-
-function createStars(){
+    const starContainer = document.querySelector('.starContainer')
     for (let i=0; i < 1000; i++){
         const starOrNoStar = Math.floor(Math.random() * 500)
+
+        // let star = document.createElement('img')
+        // star.classList.add('star')
+        // star.setAttribute('src', 'assets/StarLight.png')
+        // starContainer.append(star)
 
 
         if(starOrNoStar < 450){

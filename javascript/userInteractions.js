@@ -161,7 +161,8 @@ function createOptions(text){
     const ul = document.createElement('ul');
     ul.setAttribute('class', 'options');
     textBox.appendChild(ul);
-    if(phase === 'travelPhase' || phase === 'homePage'){
+    // if(phase === 'travelPhase' || phase === 'homePage'){
+    if(phase === 'mainPhase'){
         for(let i = 1;i <= 4;i++){
             const li = document.createElement('li');
             li.setAttribute('class', 'option');
@@ -171,16 +172,32 @@ function createOptions(text){
         }
         mainPhaseOptions(text);
     }
-    else if(phase === 'mainPhase'){
-        //test
-        for(let i = 1;i <= 4;i++){
+    // else if(phase === 'mainPhase'){
+    else if(phase === 'travelPhase'){
+        if(text.asset !== 'assets/HiddenEffect.png'){
+            for(let i = 1;i <= 4;i++){
+                const li = document.createElement('li');
+                li.setAttribute('class', 'option');
+                li.setAttribute('id', `option${i}`);
+                ul.appendChild(li);
+                li.addEventListener('click', clickOptions);
+            }
+            //check if there is a problem
+            
+            travelPhaseOptions(text);
+        }
+        else if(text.asset === 'assets/HiddenEffect.png'){
             const li = document.createElement('li');
             li.setAttribute('class', 'option');
-            li.setAttribute('id', `option${i}`);
+            li.setAttribute('id', `option4`);
             ul.appendChild(li);
             li.addEventListener('click', clickOptions);
+            const theChallenge = document.querySelector('.theChallenge');
+            theChallenge.innerText = text.text
+            li.innerText = `1. ${text.captinsMessage}`;
+            const randomEvent = document.querySelector('.randomEncounter')
+            randomEvent
         }
-        travelPhaseOptions(text);
     }
 }
 

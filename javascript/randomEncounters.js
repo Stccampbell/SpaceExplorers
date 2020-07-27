@@ -7,6 +7,7 @@ const mainPhaseObject = {
         text: "We sent a landing party down to the strange forest planet. Upon arrival we found that there are a number of delicous foods that we are able to bring aboard.",
         effect: "food",
         captinsMessage: "Glad to hear it. Lets continue on our journey",
+        asset: "assets/ForestPlanet.png",
     },
     waterComet: {
         happened: "no",
@@ -16,6 +17,7 @@ const mainPhaseObject = {
         text: "We were able to gather water from the trail of the comet!",
         effect: "water",
         captinsMessage: "Glad to hear it. Lets continue on our journey",
+        asset: "assets/Comet.png",
     },
     brokenShipRescue: {
         happened: "no",
@@ -25,6 +27,7 @@ const mainPhaseObject = {
         text: "We boarded the ship and to our pleasant suprise we found friendly aliens. They decided to join us!",
         effect: "colonists",
         captinsMessage: "Glad to hear it. Lets continue on our journey",
+        asset: "assets/BrokenShip.png",
     },
     brokenShipBrainSlug: {
         happened: "no",
@@ -34,6 +37,7 @@ const mainPhaseObject = {
         text: "Oh no! we boarded the ship and it was full of brain slugs. We lost a number of colonists.",
         effect: "colonistsBad",
         captinsMessage: "A disaster. Unfortunatly we must persevere on our journey",
+        asset: "assets/BrokenShip.png",
     },
     alienTrader: {
         happened: "no",
@@ -43,6 +47,7 @@ const mainPhaseObject = {
         text: "When we boarded the strange vessel it turnout to be friendly aliens. They agreed to sell us some food processers. With these we should be able to produce more food.",
         effect: "foodUpgrade",
         captinsMessage: "Glad to hear it. Lets continue on our journey",
+        asset: "assets/Alien.png",
     },
     waterMicrobPlanet: {
         happened: "no",
@@ -52,6 +57,7 @@ const mainPhaseObject = {
         text: "When we landed on the planet we found that none of the water was drinkable. How ever after studying the microbs in the water our scientists believe they can improve our water purifiers.",
         effect: "waterUpgrade",
         captinsMessage: "Glad to hear it. Lets continue on our journey",
+        asset: "assets/WaterPlanet.png",
     },
     brokenShipSalvage: {
         happened: "no",
@@ -61,6 +67,7 @@ const mainPhaseObject = {
         text: "While we couldnt find survivers we were able to salvafe the hull and upgrade our own. We should be alittle better protected going through space.",
         effect: "shipIntegrety",
         captinsMessage: "Glad to hear it. Lets continue on our journey",
+        asset: "assets/BrokenShip.png",
     },
 }
 
@@ -68,64 +75,78 @@ const travelPhaseObject = {
     astroidField: {
         happened: "no",
         justHappened:"no",
-        intro: "",
-        optionInsert: "",
-        text: "",
-        effect: "",
+        intro: "an astroid field",
+        optionInsert: "astroid field",
+        text: "We were unable to successfuly navigate the astroid field and took hull damage.",
+        effect: "shipIntegretyBad",
+        captinsMessage: "A disaster. Unfortunatly we must persevere on our journey",
+        asset: "assets/Astroids.png",
     },
 
     wormHole: {
         happened: "no",
         justHappened:"no",
-        intro: "",
-        optionInsert: "",
-        text: "",
-        effect: "",
+        intro: "a worm hole",
+        optionInsert: "worm hole",
+        text: "Going through the wormhole we found ourselves closer to our final destination!",
+        effect: "counterGood",
+        captinsMessage: "Glad to hear it. Lets continue on our journey",
+        asset: "assets/Wormhole.png",
     },
 
     wormHoleBad: {
         happened: "no",
         justHappened:"twice",
-        intro: "",
-        optionInsert: "",
-        text: "",
-        effect: "",
+        intro: "a worm hole",
+        optionInsert: "worm hole",
+        text: "Going throuhg the wormhole we found ourselves in a previous solar system captin. This has set us back condiserably.",
+        effect: "counterBad",
+        captinsMessage: "A disaster. Unfortunatly we must persevere on our journey",
+        asset: "assets/Wormhole.png",
     },
 
     solarFlare: {
         happened: "no",
         justHappened:"no",
-        intro: "",
-        optionInsert: "",
-        text: "",
-        effect: "",
+        intro: "a solar flare",
+        optionInsert: "solar flare",
+        text: "The solar flare has burnt through a section of the ship. We unfortunatly lost many colonists",
+        effect: "colonistsBad",
+        captinsMessage: "A disaster. Unfortunatly we must persevere on our journey",
+        asset: "assets/SolarFlare.png",
     },
 
     blackHole: {
         happened: "no",
         justHappened:"no",
-        intro: "",
-        optionInsert: "",
-        text: "",
-        effect: "",
+        intro: "a black hole",
+        optionInsert: "black hole",
+        text: "Moving past the blackhole we were caught in its gravity and lost alot of time in our journy to our new home.",
+        effect: "counterBad",
+        captinsMessage: "A disaster. Unfortunatly we must persevere on our journey",
+        asset: "assets/BlackHole.png",
     },
 
     comet: {
         happened: "no",
         justHappened:"no",
-        intro: "",
-        optionInsert: "",
-        text: "",
-        effect: "",
+        intro: "a comet",
+        optionInsert: "comet",
+        text: "We were able to gather additional water from the comet as we passed by!",
+        effect: "water",
+        captinsMessage: "Glad to hear it. Lets continue on our journey",
+        asset: "assets/Comet.png",
     },
 
     alienAttack: {
         happened: "no",
         justHappened:"no",
-        intro: "",
-        optionInsert: "",
-        text: "",
-        effect: "",
+        intro: "an alien vessel",
+        optionInsert: "alien vessel",
+        text: "As we approched the aliens the boarded our ship! They kidnapped many colonists for their experiments.",
+        effect: "colonistsBad",
+        captinsMessage: "A disaster. Unfortunatly we must persevere on our journey",
+        asset: "assets/Alien.png",
     },
 
     spaceRats: {
@@ -133,17 +154,21 @@ const travelPhaseObject = {
         justHappened:"no",
         intro: "",
         optionInsert: "",
-        text: "",
-        effect: "",
+        text: "Captin on one of our previous stops we must have picked up some sort of space creature. They appear to have eaten much of our food.",
+        effect: "foodBad",
+        captinsMessage: "A disaster. Unfortunatly we must persevere on our journey",
+        asset: "assets/HiddenEffect.png",
     },
 
-    waterFastFroze: {
+    waterFastFreeze: {
         happened: "no",
         justHappened:"no",
         intro: "",
         optionInsert: "",
-        text: "",
-        effect: "",
+        text: "Captin one of our heating units broke. This caused a flash freeze of some of our water supplys.",
+        effect: "waterBad",
+        captinsMessage: "A disaster. Unfortunatly we must persevere on our journey",
+        asset: "assets/HiddenEffect.png",
     },
 
     foodSpoiled: {
@@ -151,8 +176,10 @@ const travelPhaseObject = {
         justHappened:"no",
         intro: "",
         optionInsert: "",
-        text: "",
-        effect: "",
+        text: "Captin some of our food had not been properly stored leading it to spoil.",
+        effect: "foodBad",
+        captinsMessage: "A disaster. Unfortunatly we must persevere on our journey",
+        asset: "assets/HiddenEffect.png",
     },
 
     waterLeak: {
@@ -160,18 +187,11 @@ const travelPhaseObject = {
         justHappened:"no",
         intro: "",
         optionInsert: "",
-        text: "",
-        effect: "",
+        text: "Captin a breach in the hull has caused water to leak. We have lost some of our supply.",
+        effect: "waterBad",
+        captinsMessage: "A disaster. Unfortunatly we must persevere on our journey",
+        asset: "assets/HiddenEffect.png",
     },
-
-    waterLeak: {
-        happened: "no",
-        justHappened:"no",
-        intro: "",
-        optionInsert: "",
-        text: "",
-        effect: "",
-    }
 }
 
 
@@ -263,6 +283,12 @@ function resultsofrandomencounter(text){
     }
     else if(text.effect === 'shipIntegrityDowngrade'){
         resources.shipIntegretyUpgrades -= 1
+    }
+    else if(text.effect === 'counterGood'){
+        resources.endgamecounter += 1
+    }
+    else if(text.effect === 'counterBad'){
+        resources.endgamecounter -= 1
     }
 
 }
