@@ -31,7 +31,7 @@ function clickOptions(){
 
         //adds food
         else if(event.target.id === 'option5'){
-            resources.food += Math.floor(resources.colonists * (2(resources.foodUpgrades + .5)));
+            resources.food += Math.floor(resources.colonists * (2 + (resources.foodUpgrades + .5)));
             exitAnimation()
         }
         //adds water
