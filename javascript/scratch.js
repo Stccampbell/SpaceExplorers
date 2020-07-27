@@ -8,7 +8,7 @@ let phase = 'homePage';
 const resources = {
     //DO NOT CHANGE ORDER OF FIRST 4
     colonists: 1000,
-    shipIntegrety: 50,
+    shipIntegrety: 100,
     food: 10000,
     water: 10000,
     //DO NOT CHANGE ORDER OF FIRST 4
@@ -138,11 +138,34 @@ function createGamePage(){
 function changePhase(){
     clearPage();
     
-    if(resources.endgamecounter >= 300){
-        alert('you win')
-    }
-    else if(resources.colonists <= 0){
-        alert('you lose')
+    if(resources.endgamecounter >= 10 || resources.colonists <= 0){
+        endScreen = document.createElement('div')
+        endScreen.setAttribute('class', 'homeScreen')
+        main.insertBefore(endScreen.spaceOne)
+        winOrLose = document.createElement('h1');
+        if(resources.endgamecounter >= 10 ){
+            winOrLose.innerText = 'You Win'
+        }
+        else if(resources.colonists <= 0){
+            winOrLose.innerText = 'You Win'
+        }
+        let peoplePoints = resources.colonists * 10
+        let foodPoints = resources.food
+        let waterPoints = resources.water
+        let timeTaken = 10000 - (endgamecounter * 1000)
+        let total = timeTaken + waterPoints + foodPoints + peoplePoints
+
+        const scoreboard = document.createElement('p')
+        scoreboard.innerHTML = `Total: ${total} Points` + "<br />" + `Time Taken: ${timeTaken} Points` + "<br />" + `Colonists Survived: ${peoplePoints} Points` + "<br />" + `Food LeftOver: ${foodPoints} Points` + "<br />" + `Water Leftover: ${waterPoints} Points`
+        
+        const playAgain = document.createElement('button')
+        playAgain.setAttribute('class', 'start')
+        playAgain.setAttribute('class', 'start')
+        playAgain.innerHTML('Play Again?')
+        
+        endScreen.appendChild(winOrLose)
+        endScreen.appendChild(playAgain)
+        endScreen.appendChild(scoreboard)
     }
     else{
         if(phase === 'travelPhase'){
@@ -250,10 +273,6 @@ function createStars(){
     for (let i=0; i < 1000; i++){
         const starOrNoStar = Math.floor(Math.random() * 500)
 
-        // let star = document.createElement('img')
-        // star.classList.add('star')
-        // star.setAttribute('src', 'assets/StarLight.png')
-        // starContainer.append(star)
 
 
         if(starOrNoStar < 450){
@@ -292,4 +311,14 @@ function createStars(){
             starContainer.append(star)
         }
     }
+}
+
+function scoreCalculator(){
+    let peoplePoints = resources.colonists * 10
+    let foodPoints = resources.food
+    let waterPoints = resources.water
+    let timeTaken = 10000 - (endgamecounter * 1000)
+
+    const scoreboard = document.createElement('p')
+
 }

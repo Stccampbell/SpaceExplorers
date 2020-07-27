@@ -4,6 +4,7 @@ function clickOptions(){
         //explores randomEncounter
         if(event.target.id === 'option1'){
             randomEncounterInfoText(resources.currentRandomEncounter, event.target.id);
+            resultsofrandomencounter(resources.currentRandomEncounter);
         }
 
         //moves to food or water selection menu
@@ -45,7 +46,9 @@ function clickOptions(){
     else if(phase === 'travelPhase'){
         //explores randomEncounter
         if(event.target.id === 'option1'){
-            randomEncounterInfoText(resources.currentRandomEncounter, event.target.id);        }
+            randomEncounterInfoText(resources.currentRandomEncounter, event.target.id);        
+            resultsofrandomencounter(resources.currentRandomEncounter);
+        }
         //destroys the random encounter
         else if(event.target.id === 'option2'){
             randomEncounterInfoText(resources.currentRandomEncounter, event.target.id);
@@ -174,6 +177,7 @@ function createOptions(text){
     }
     // else if(phase === 'mainPhase'){
     else if(phase === 'travelPhase'){
+        //determines the text if there is a hidden event
         if(text.asset !== 'assets/HiddenEffect.png'){
             for(let i = 1;i <= 4;i++){
                 const li = document.createElement('li');
@@ -182,7 +186,6 @@ function createOptions(text){
                 ul.appendChild(li);
                 li.addEventListener('click', clickOptions);
             }
-            //check if there is a problem
             
             travelPhaseOptions(text);
         }
@@ -195,8 +198,7 @@ function createOptions(text){
             const theChallenge = document.querySelector('.theChallenge');
             theChallenge.innerText = text.text
             li.innerText = `1. ${text.captinsMessage}`;
-            const randomEvent = document.querySelector('.randomEncounter')
-            randomEvent
+            resultsofrandomencounter(resources.currentRandomEncounter);
         }
     }
 }

@@ -25,7 +25,7 @@ const mainPhaseObject = {
         intro: "a broken down space vessel",
         optionInsert: "broken ship",
         text: "We boarded the ship and to our pleasant suprise we found friendly aliens. They decided to join us!",
-        effect: "colonists",
+        effect: "colonist",
         captinsMessage: "Glad to hear it. Lets continue on our journey",
         asset: "assets/BrokenShip.png",
     },
@@ -44,7 +44,7 @@ const mainPhaseObject = {
         justHappened:"no",
         intro: "some sort of flying saucer",
         optionInsert: "mysterious vessel",
-        text: "When we boarded the strange vessel it turnout to be friendly aliens. They agreed to sell us some food processers. With these we should be able to produce more food.",
+        text: "When we boarded the strange vessel it turned out to be friendly aliens. They agreed to sell us some food processers. With these we should be able to produce more food.",
         effect: "foodUpgrade",
         captinsMessage: "Glad to hear it. Lets continue on our journey",
         asset: "assets/Alien.png",
@@ -239,7 +239,7 @@ function encounterSorter(obj){
 }
 
 function resultsofrandomencounter(text){
-    const foodWater = Math.floor(resources.colonists * ((Math.random() * 3) + 2.5))
+    const foodWater = Math.floor(resources.colonists * ((Math.random() * 3) + .5))
     const colonist = Math.floor(Math.random() * (resources.colonists * .6))
     const shipIntegrety = Math.floor(Math.random() * 4)
     if(text.effect === 'food'){
@@ -269,7 +269,7 @@ function resultsofrandomencounter(text){
     else if(text.effect === 'colonist'){
         resources.colonists += colonist
     }
-    else if(text.effect === 'colonistbad'){
+    else if(text.effect === 'colonistBad'){
         resources.colonists -= colonist
     }
     else if(text.effect === 'shipIntegrity'){
@@ -290,7 +290,8 @@ function resultsofrandomencounter(text){
     else if(text.effect === 'counterBad'){
         resources.endgamecounter -= 1
     }
-
+    resourceAssignment();
+    resourceUpdate();
 }
 
 function randomEncounterAvoid(text){

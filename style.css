@@ -1,11 +1,30 @@
-body{
-    background-color: blue;
+html { 
+    width:100%; 
+    height:100%; 
+    margin:0;
+    padding: 0; 
 }
-
+body { 
+    width:100%; 
+    height:100%; 
+    margin:0; 
+    padding:0;
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.background{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .gameContainer{
     display: flex;
     flex-direction: column;
-    background: blue;
+    /* background: blue; */
     justify-content: center;
     align-items: center;
 }
@@ -31,14 +50,18 @@ main{
 }
 
 .interactiveBox{
-    background-color: white;
+    /* background-color:black; */
+    color: yellow;
     height: 20vh;
     width: 75vw;
     display: flex;
     justify-content: center;
     align-self: center;
+    cursor: pointer;
 
     z-index: 1;
+
+    background-image: url('././assets/artem-bayankin-starconflict-textures-panel-sci-fi-09.jpg');
 }
 
 .option:hover{
@@ -84,7 +107,9 @@ h2{
 }
 
 .resources{
-    color: white;
+    color: yellow;
+    z-index: 4;
+    background-color: black;
 }
 
 ul{
@@ -100,20 +125,6 @@ ul{
     animation: encounterMove1 5s forwards;
     
 }
-/*
-.fleet{
-    width: 0;
-    height: 0;
-    border-top: 5vh solid transparent;
-    border-left: 10vh solid gold;
-    border-bottom: 5vh solid transparent;
-    z-index: 1;
-    
-
-    position: relative;
-    animation: shipMove1 5s forwards;
-}
-*/
 .fleet{
     width: auto;
     height: 30vh;
@@ -195,4 +206,17 @@ ul{
     width: auto;
     height: 3vh;
     position: relative;
+}
+
+.start{
+    width: 12vh;
+    height: 7vh;
+    font-size: 2.5vh;
+    background: none;
+    border: solid white;
+    color: white;
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
 }
