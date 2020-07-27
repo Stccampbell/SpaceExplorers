@@ -163,12 +163,14 @@ function changePhase(){
         
         const playAgain = document.createElement('button')
         playAgain.setAttribute('class', 'start')
-        playAgain.setAttribute('id', 'start')
+        playAgain.setAttribute('id', 'restart')
         playAgain.innerHTML = 'Play Again?'
         
         endScreen.appendChild(winOrLose)
         endScreen.appendChild(playAgain)
         endScreen.appendChild(scoreboard)
+
+        restart();
     }
 
     else{
@@ -333,4 +335,25 @@ function createStars(){
             starContainer.append(star)
         }
     }
+}
+
+
+function restart(){
+    document.querySelector('#restart').addEventListener('click', function(){
+        const homeScreen = document.querySelector('.homeScreen')
+        homeScreen.remove()
+
+        resources.colonists = 1000
+        resources.food = 10000
+        resources.water = 10000
+        resources.shipIntegrety = 100
+        resources.waterUpgrades = 1
+        resources.foodUpgrades = 1
+        resources.year = 2237
+        resources.endgamecounter = 0
+        resources.currentRandomEncounter = false
+        resources.shipIntegretyUpgrade = 1
+        
+        createGamePage()
+    })
 }

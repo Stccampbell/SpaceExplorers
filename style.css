@@ -62,6 +62,8 @@ main{
     z-index: 1;
 
     background-image: url('././assets/artem-bayankin-starconflict-textures-panel-sci-fi-09.jpg');
+
+    font-size: 1.5vh;
 }
 
 .option:hover{
@@ -74,6 +76,7 @@ main{
 
 h2{
     text-align: center;
+    font-size: 3vh;
 }
 
 .homeScreen{
@@ -110,6 +113,7 @@ h2{
     color: yellow;
     z-index: 4;
     background-color: black;
+    font-size: 1.8vh;
 }
 
 ul{

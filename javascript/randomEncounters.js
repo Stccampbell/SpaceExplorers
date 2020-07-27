@@ -290,6 +290,16 @@ function resultsofrandomencounter(text){
     else if(text.effect === 'counterBad'){
         resources.endgamecounter -= 1
     }
+    if(resources.shipIntegrety <= 0){
+        resources.shipIntegrety -= resources.shipIntegrety
+        resources.colonists -= Math.floor(resources.colonists * .5) + 200;
+    }
+    if(resources.food <= 0){
+        resources.food -= resources.food
+    }
+    if(resources.water <= 0){
+        resources.water -= resources.water
+    }
     resourceAssignment();
     resourceUpdate();
 }

@@ -132,7 +132,7 @@ function randomEncounterInfoText(text, id){
             else if(goodOrBad >= 85){
                 const amount = Math.floor(Math.random() * 10)
                 resources.shipIntegrety -= amount
-                endgamecounter -= 1
+                resources.endgamecounter -= 1
                 theChallenge.innerText = `We destroyed the ${text.optionInsert}. Unfortunatly we suffered ${amount}% hull damage and have been slowed on our journey.`
                 li.innerText = `1. A disaster. Unfortunatly we must persevere on our journey`
             }
